@@ -3,13 +3,11 @@ import os
 import logging
 from time import localtime, strftime, sleep
 
-
 logger=logging.getLogger(__name__)
-file_logger = logging.FileHandler(filename="sbhserr.log")
-formatter = logging.Formatter('%(asctime)s --- %(levelname)s --- %(message)s')  
-                                  
+file_logger = logging.FileHandler(os.path.dirname(os.path.abspath(__file__))+"/sbhserr.log")
+formatter = logging.Formatter('%(asctime)s --- %(levelname)s --- %(message)s')
 file_logger.setFormatter(formatter)
-logger.addHandler(file_logger) 
+logger.addHandler(file_logger)
 logger.setLevel(logging.DEBUG)
 
 

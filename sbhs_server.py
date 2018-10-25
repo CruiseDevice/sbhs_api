@@ -1,25 +1,6 @@
 from flask import (Flask, flash, redirect, render_template, request, url_for,
                    Response, jsonify)
-from logging.config import dictConfig
 from sbhs import SbhsServer, Sbhs
-
-dictConfig({
-     'version': 1,
-    'formatters': {'default': {
-        'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
-    }},
-    'handlers': {'file': {
-        'class': 'logging.FileHandler',
-        'formatter': 'default',
-        'filename': 'error.log',
-    }},
-
-    'root': {
-        'level': 'DEBUG',
-        'handlers': ['file']
-    }
-})
-
 app = Flask(__name__)
 
 
